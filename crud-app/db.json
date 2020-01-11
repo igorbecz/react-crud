@@ -8,11 +8,11 @@
       "translated": false
     },
     {
-      "id": 3,
-      "title": "json-server",
-      "author": "typicode",
-      "release_year": 2000,
-      "translated": false
+      "title": "aaaa",
+      "author": "aaaaa",
+      "releaseYear": "",
+      "translated": true,
+      "id": 2
     }
   ]
 }
