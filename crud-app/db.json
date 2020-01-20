@@ -1,18 +1,25 @@
 {
   "books": [
     {
-      "id": 1,
-      "title": "json-server",
-      "author": "typicode",
-      "release_year": 2000,
-      "translated": false
+      "title": "Gaba",
+      "author": "Sraba",
+      "releaseYear": 1920,
+      "translated": true,
+      "id": 1
     },
     {
-      "title": "aaaa",
-      "author": "aaaaa",
-      "releaseYear": "",
+      "title": "test",
+      "author": "Testoviron",
+      "releaseYear": "2001",
       "translated": true,
-      "id": 2
+      "id": 5
+    },
+    {
+      "title": "Sibm",
+      "author": "Bimba",
+      "releaseYear": "asdsda",
+      "translated": true,
+      "id": 6
     }
   ]
 }

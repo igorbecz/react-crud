@@ -1,9 +1,9 @@
 import React from "react";
 import Modal from "react-bootstrap/Modal";
-import AddBookForm from "./AddBookForm";
+import UpdateBookForm from "./UpdateBookForm";
 import Button from "react-bootstrap/Button";
 
-class AddBookModal extends React.Component {
+class UpdateBookModal extends React.Component {
   constructor(props) {
     super(props);
 
@@ -11,15 +11,17 @@ class AddBookModal extends React.Component {
       id: 0
     };
 
+    //console.log(this.props.book.id);
+
     this.formRef = React.createRef();
   }
 
   handleClick = () => {
-    this.addNewBook();
+    this.updateBook();
     //window.location.reload(false);
   };
 
-  async addNewBook(params) {
+  async updateBook(params) {
     const node = this.formRef.current;
     console.log(node.state);
     if (
@@ -27,8 +29,8 @@ class AddBookModal extends React.Component {
       /^[A-Za-zżźćńółęąśŻŹĆĄŚĘŁÓŃ]*$/g.test(node.state.title) &&
       /^[0-9]*\.?[0-9]*$/g.test(node.state.releaseYear)
     ) {
-      await fetch("books/", {
-        method: "POST",
+      await fetch("books/" + this.props.book.id, {
+        method: "PUT",
         headers: {
           Accept: "application/json",
           "Content-Type": "application/json"
@@ -50,12 +52,12 @@ class AddBookModal extends React.Component {
           <Modal.Title>Add new book</Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          <AddBookForm ref={this.formRef} />
-          <Button onClick={this.handleClick}>Add new book</Button>
+          <UpdateBookForm ref={this.formRef} book={this.props.book} />
+          <Button onClick={this.handleClick}>Update book</Button>
         </Modal.Body>
       </Modal>
     );
   }
 }
 
-export default AddBookModal;
+export default UpdateBookModal;
